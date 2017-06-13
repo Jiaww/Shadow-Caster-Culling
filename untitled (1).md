@@ -1,4 +1,4 @@
-# (GitHub-Flavored) Markdown Editor
+# Shadow Caster Culling使用文档
 
 ## 简介：
    在*实时渲染(Real-Time rendering)*中，*阴影映射(Shadow mapping)*过程是限制渲染速度的一个非常重要的环节，因为在每一帧渲染之前，我们还需要对整个场景进行一次*深度缓冲(depth buffer)*的渲染(shadow pass)，用来检测物体是否在阴影中。
@@ -147,7 +147,7 @@
 
 	写入格式为32位的int格式，其中每一位代表从一个光源(Light)出发的检测结果，同时model下<shadow>字段。在读取检测信息的时候，需要按位读取，其中从右数第一位开始代表光源1到光源N，例如：仅光源01与光源02，若检测结果为光源02为有意义，01无意义，则写入<PrimitiveGroup>的结果为2，即*****0010(前面位数省略)。
 而对于写入<shadow>的结果，如果同一个model存在多个RenderSet或PrimitiveGroup，则结果为其model下所有		PrimitiveGroup结果的位或。
-  ```
+  ```xml
      <model>
           <resource>	objects/area/zw/model/zw_mlqm01_6381.model	</resource>
           <uuid>	BCF2EFBF-46D323BC-204E259B-CB3D47BA	</uuid>
